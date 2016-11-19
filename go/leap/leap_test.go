@@ -25,7 +25,7 @@ func TestLeapYears(t *testing.T) {
 // Benchmark 400 year interval to get fair weighting of different years.
 func Benchmark400(b *testing.B) {
   for i := 0; i < b.N; i++ {
-    for y := 1600; y < 2000; y++ {
+    for y := 1200; y < 2000; y++ {
       IsLeapYear(y)
     }
   }
