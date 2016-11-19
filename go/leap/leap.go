@@ -8,5 +8,5 @@ const testVersion = 2
 // It's good style to write a comment here documenting IsLeapYear.
 func IsLeapYear(year int) bool {
   // Return true/false accordingly
-  return ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0)
+  return (year % 4 == 0 && year % 100 != 0) || year % 400 == 0
 }
