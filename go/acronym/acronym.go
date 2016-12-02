@@ -2,7 +2,6 @@
 package acronym
 
 import (
-  "fmt"
   "strings"
   "unicode"
 )
@@ -22,14 +21,16 @@ func abbreviate (input string) (abbr string) {
       continue
     }
 
+    // previous rune/letter
     pr := runes[i-1]
-    if ( unicode.IsLower(pr) && unicode.IsUpper(r) ) {
+    if ( (unicode.IsLower(pr) && unicode.IsUpper(r)) ||
+         (unicode.IsLetter(r) &&
+          (unicode.IsSpace(pr) || unicode.IsPunct(pr)))) {
       abbr = abbr + string(r)
     }
 
   }
 
   abbr = strings.ToUpper(abbr)
-  fmt.Println(abbr)
   return
 }
